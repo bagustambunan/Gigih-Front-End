@@ -2,9 +2,9 @@ import React from 'react';
 
 const Gif = props => {
     return (
-        <div>
-            <h2 className="text-lg mt-2 mb-2 font-bold">{props.title}</h2>
-            <img src={props.url} title={props.title} className="rounded-lg"/>
+        <div className="justify-start bg-white w-4/12 p-3 border">
+            <img src={props.url} title={props.title} className="rounded-lg "/>
+            <p className="text-sm mt-2 mb-2">{props.title}</p>
         </div>
     );
 }

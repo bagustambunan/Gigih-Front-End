@@ -13,12 +13,16 @@ class Search extends React.Component {
         }
         
         return (
-            <div className="container px-10 py-5 grid justify-center">
-                <div className="bg-gray-100 px-20 py-10">
+            <center className="p-5">
+                <div className="w-9/12 object-center">
                     <Form/>
-                    <Gif url={gif.url} title={gif.title}/>
+                    <div className="bg-gray-100 p-8 rounded-lg mt-5 flex">
+                        <Gif url={gif.url} title={gif.title}/>
+                        <Gif url={gif.url} title={gif.title}/>
+                        <Gif url={gif.url} title={gif.title}/>
+                    </div>
                 </div>
-            </div>
+            </center>
         );
     }
 }
