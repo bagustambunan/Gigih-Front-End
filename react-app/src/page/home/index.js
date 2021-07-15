@@ -2,7 +2,18 @@ import React from 'react';
 import Form from '../../components/Form';
 import Gif from '../../components/Gif';
 
+const axios = require('axios');
+
 class Search extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            url_img: "https://media.giphy.com/media/Vh8pbGX3SGRwFDh3V0/source.gif",
+            url_giphy: "belum-ada"
+        }
+    }
+
     render() {
         const gif = {
             id: '4HrBfVJJveBNS9ytSk',
@@ -16,6 +27,7 @@ class Search extends React.Component {
             <center className="p-5">
                 <div className="w-9/12 object-center">
                     <Form/>
+                    <p>{this.state.url_giphy}</p>
                     <div className="bg-gray-100 p-8 rounded-lg mt-5 flex">
                         <Gif url={gif.url} title={gif.title}/>
                         <Gif url={gif.url} title={gif.title}/>
