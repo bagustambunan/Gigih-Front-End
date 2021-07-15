@@ -43,19 +43,22 @@ class Search extends React.Component {
             <center className="p-5">
                 <div className="w-9/12 object-center">
 
+                    <div className="w-full self-start">
+                        <h1 className="text-3xl font-bold mb-5 self-start text-gray-600">Giphy API</h1>
+                    </div>
+
                     <div className="">
-                        <input onChange={(event) => {this.searchGiphy(event)}} type="text" name="q" className="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-10/12" placeholder="Type anything..."></input>
+                        <input onChange={(event) => {this.searchGiphy(event)}} type="text" name="q" className="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-11/12" placeholder="Type anything..."></input>
                         {/* <p>{this.state.url_giphy}</p> */}
-                        <button onClick={() => {this.getImg()}} className="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-2/12 hover:bg-yellow-500">Search</button>
+                        <button onClick={() => {this.getImg()}} className="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-1/12 hover:bg-yellow-500"><i className="fa fa-search"></i></button>
                     </div>
                     
                     <div className="bg-gray-100 p-8 rounded-lg mt-5 flex">
-                    {this.state.data_img.map((item) => {
-                        return (
-                            <Gif url={item.images.original.url} title={item.title}/>
-                        );
-                    })}
-
+                        {this.state.data_img.map((item) => {
+                            return (
+                                <Gif url={item.images.original.url} title={item.title}/>
+                            );
+                        })}
                     </div>
 
                 </div>
