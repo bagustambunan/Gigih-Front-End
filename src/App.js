@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-// import Search from './page/Search';
+import Search from './page/Search';
 import Exercise from './page/Exercise';
 
 function App() {
@@ -9,8 +9,10 @@ function App() {
   console.log(process.env.REACT_APP_GIPHY_KEY);
 
   return (
-    // <Search />
-    <Exercise/>
+    <>
+      <Search />
+      <Exercise/>
+    </>
   );
 }
 
