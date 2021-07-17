@@ -1,12 +1,12 @@
 import React from 'react';
-import Gif from '../../components/Gif';
-import data from '../../data/gifs';
+import Gif from '../components/Gif';
+import data from '../data/gifs';
 
 class Exercise extends React.Component {
 
     render() {
 
-        const filtered_data = data.filter(function (item) {
+        const filtered_data = data.filter( item => {
             return item.rating === "g";
         });
         console.log(filtered_data);

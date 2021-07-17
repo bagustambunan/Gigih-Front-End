@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-// import Search from "./page/home/Search";
-import Exercise from "./page/home/Exercise";
+// import Search from './page/Search';
+import Exercise from './page/Exercise';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     // <Search />
-    <Exercise />
+    <Exercise/>
   );
 }
 
