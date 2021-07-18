@@ -12,23 +12,17 @@ class Home extends React.Component {
         console.log(filtered_data);
         
         return (
-            <center className="p-5">
-                <div className="w-full object-center">
+            <>
+            
+            <div className="bg-gray-100 p-8 rounded-lg flex">
+                {filtered_data.map((item) => {
+                    return (
+                        <Gif key={item.id} url={item.url} title={item.title}/>
+                    );
+                })}
+            </div>
 
-                    <div className="mt-5">
-                        <h1 className="text-2xl font-bold mb-5 self-start text-gray-600">Home</h1>
-                    </div>
-                    
-                    <div className="bg-gray-100 p-8 rounded-lg mt-5 flex">
-                        {filtered_data.map((item) => {
-                            return (
-                                <Gif key={item.id} url={item.url} title={item.title}/>
-                            );
-                        })}
-                    </div>
-
-                </div>
-            </center>
+            </>
         );
     }
 }
