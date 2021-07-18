@@ -14,7 +14,7 @@ class Home extends React.Component {
         return (
             <>
             
-            <div className="bg-gray-100 p-8 rounded-lg flex">
+            <div className="bg-gray-100 p-8 rounded-lg flex flex-wrap">
                 {filtered_data.map((item) => {
                     return (
                         <Gif key={item.id} url={item.url} title={item.title}/>

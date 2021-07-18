@@ -21,10 +21,10 @@ const GiphyPage = () => {
     }
 
     return (
-        <center className="p-5">
-            <div className="w-11/12 object-center">
+        <center className="p-5 ">
+            <div className="w-10/12">
 
-                <div className="mt-5 mb-5">
+                <div className="w-full mt-5 mb-5 text-left">
                     <a className={`text-2xl font-bold mb-5 cursor-pointer ${view=="home" ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}
                         onClick={() => {setView("home")}} >Home</a>
                     <a className={`ml-3 text-2xl font-bold mb-5 cursor-pointer ${view=="search" ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}

@@ -11,7 +11,7 @@ class Search extends React.Component {
         this.state = {
             // url_img: ["https://media.giphy.com/media/Vh8pbGX3SGRwFDh3V0/source.gif"],
             data_img: [],
-            url_giphy: `https://api.giphy.com/v1/gifs/search?api_key=${giphy_key}&q=google&limit=3&offset=0&rating=g&lang=en`
+            url_giphy: ''
         }
     }
 
@@ -30,7 +30,7 @@ class Search extends React.Component {
 
     searchGiphy(event) {
         let q = event.target.value;
-        let url_new = `https://api.giphy.com/v1/gifs/search?api_key=${giphy_key}&q=${q}&limit=3&offset=0&rating=g&lang=en`;
+        let url_new = `https://api.giphy.com/v1/gifs/search?api_key=${giphy_key}&q=${q}&limit=5&offset=0&rating=g&lang=en`;
         this.setState({
             url_giphy: url_new,
         });
@@ -48,7 +48,7 @@ class Search extends React.Component {
                 <button onClick={() => {this.getImg()}} className="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-1/12 hover:bg-yellow-500"><i className="fa fa-search"></i></button>
             </div>
             
-            <div className="bg-gray-100 p-8 rounded-lg mt-5 flex">
+            <div className="bg-gray-100 p-8 rounded-lg mt-5 flex flex-wrap">
                 {this.state.data_img.map((item) => {
                     return (
                         <Gif url={item.images.original.url} title={item.title}/>
