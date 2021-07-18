@@ -1,5 +1,5 @@
 import React from 'react';
-import Gif from '../components/Gif';
+import Gif from '../../components/Gif';
 
 const axios = require('axios');
 const giphy_key = process.env.REACT_APP_GIPHY_KEY;
