@@ -5,7 +5,7 @@ import GiphyPage from './page/Giphy';
 
 function App() {
 
-  console.log(process.env.REACT_APP_GIPHY_KEY);
+  // console.log(process.env.REACT_APP_GIPHY_KEY);
 
   return (
     <GiphyPage/>

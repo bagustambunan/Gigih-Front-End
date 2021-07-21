@@ -2,20 +2,25 @@ import React, { useState } from 'react';
 import Home from './Home';
 import Search from './Search';
 
-const GiphyPage = () => {
+function GiphyPage() {
 
-    const [view, setView] = useState("home");
+    const [view, set_view] = useState("home");
+    const menu = [
+    {
+        name: "home",
+        text: "Home",
+        page: <Home/>
+    },
+    {
+        name: "search",
+        text: "Search",
+        page: <Search/>
+    }
+    ]
 
     const Page = () => {
-        switch(view){
-            case "home":
-                return <Home/>;
-            case "search":
-                return <Search/>;
-            default:
-                return <Home/>;
-        }
-        // return view=="home" ? <Home/> : <Search/>;
+        const selected_page = menu.filter(item => item.name === view);
+        return selected_page[0].page;
     }
 
     return (
@@ -23,10 +28,12 @@ const GiphyPage = () => {
             <div className="w-10/12">
 
                 <div className="w-full mt-5 mb-5 text-left">
-                    <a className={`text-2xl font-bold mb-5 cursor-pointer ${view==="home" ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}
-                        onClick={() => {setView("home")}} >Home</a>
-                    <a className={`ml-3 text-2xl font-bold mb-5 cursor-pointer ${view==="search" ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}
-                        onClick={() => {setView("search")}} >Search</a>
+                    { menu.map((item) => {
+                    return (
+                        <a className={`mr-3 text-2xl font-bold mb-5 cursor-pointer ${view===item.name ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}
+                        onClick={() => {set_view(item.name)}} >{item.text}</a>
+                    );
+                    })}
                 </div>
 
                 <Page/>
