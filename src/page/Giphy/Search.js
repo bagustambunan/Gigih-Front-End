@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SearchForm from '../../components/SearchForm';
 import Gif from '../../components/Gif';
 
 const axios = require('axios');
@@ -15,7 +16,7 @@ function Search() {
         set_url_giphy(url_new);
     }
 
-    async function handleClick() {
+    async function handleSubmit() {
         try {
             set_data_img(null);
             await axios.get(url_giphy)
@@ -30,16 +31,20 @@ function Search() {
     return (
         <>
 
-        <div className="">
-            <input onChange={(event) => {handleChange(event)}} type="text" className="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-11/12" placeholder="Type anything..."></input>
-            <button onClick={() => {handleClick()}} className="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-1/12 hover:bg-yellow-500"><i className="fa fa-search"></i></button>
-        </div>
+        <SearchForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+        />
         
         {(data_img) && (
             <div className="bg-gray-100 p-8 rounded-lg mt-5 flex flex-wrap">
                 {data_img.map((item) => {
                     return (
-                        <Gif url={item.images.original.url} title={item.title}/>
+                        <Gif
+                            key={item.id}
+                            url={item.images.original.url}
+                            title={item.title}
+                        />
                     );
                 })}
             </div>
