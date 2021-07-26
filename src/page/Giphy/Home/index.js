@@ -1,13 +1,12 @@
 import React from 'react';
-import Gif from '../../components/Gif';
-import data from '../../data/gifs';
+import Gif from '../../../components/Gif';
+import data from '../../../data/gifs';
 
 function Home() {
 
     const filtered_data = data.filter( item => {
         return item.rating === "g";
     });
-    // console.log(filtered_data);
     
     return (
         <>
