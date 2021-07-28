@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import GiphyPage from './page/Giphy';
+import AppRouter from "./Routes";
 
 function App() {
 
   return (
-    <GiphyPage/>
+    <AppRouter/>
   );
 }
 
