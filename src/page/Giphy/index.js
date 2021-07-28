@@ -29,6 +29,11 @@ function GiphyPage(props) {
         return selected_page[0].page;
     }
 
+    function goTo(menu, e){
+        e.preventDefault();
+        set_view(menu);
+    }
+
     return (
         <center className="p-5 ">
             <div className="w-10/12">
@@ -37,7 +42,9 @@ function GiphyPage(props) {
                     { menu.map((item) => {
                     return (
                         <a className={`mr-5 text-2xl font-bold mb-5 cursor-pointer ${view===item.name ? "text-gray-600" : "text-gray-300 hover:text-yellow-400"}`}
-                        onClick={() => {set_view(item.name)}}
+                        onClick={(e) => {
+                            goTo(item.name, e);
+                        }}
                         href={`/${item.name}`}
                         >{item.text}</a>
                     );
