@@ -5,7 +5,7 @@ import {
     selectQuery,
   } from '../redux/querySlice';
 
-function SearchForm(props) {
+function SearchForm() {
 
     const query = useSelector(selectQuery);
     const dispatch = useDispatch();

@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SearchForm from '../../../components/SearchForm';
 import Gif from '../../../components/Gif';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
-    updateQuery,
     selectQuery,
   } from '../../../redux/querySlice';
 
