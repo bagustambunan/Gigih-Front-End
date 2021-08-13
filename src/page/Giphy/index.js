@@ -7,21 +7,21 @@ function GiphyPage(props) {
 
     const [view, set_view] = useState(props.v);
     const menu = [
-        {
-            name: "home",
-            text: "Home",
-            page: <Home/>
-        },
+        // {
+        //     name: "home",
+        //     text: "Home",
+        //     page: <Home/>
+        // },
         {
             name: "search",
             text: "Search",
             page: <Search/>
         },
-        {
-            name: "trending",
-            text: "Trending",
-            page: <Trending/>
-        }
+        // {
+        //     name: "trending",
+        //     text: "Trending",
+        //     page: <Trending/>
+        // }
     ];
 
     const Page = () => {
